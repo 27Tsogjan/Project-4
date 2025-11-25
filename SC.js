@@ -153,15 +153,15 @@ function displayResults(results, word) {
 }
 
 function clearAll() {
-    inputText.value = '';
+    inputWord.value = '';
     resultsContainer.classList.add('hidden');
     emptyState.classList.remove('hidden');
     suggestionsContainer.innerHTML = '';
     statusMessage.innerHTML = '';
-    inputText.focus();
+    inputWord.focus();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     spellChecker.loadDictionary();
-    inputText.focus();
+    inputWord.focus();
 });
