@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spell Checker - CS 340 Project</title>
+    <link rel="stylesheet" href="SC.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✓ Spell Checker</h1>
+            <p class="subtitle">CS 340 Project - Edit Distance Algorithm</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Check Your Spelling</h2>
+                <textarea id="inputText" 
+                          placeholder="Enter text to check for spelling errors..." 
+                          rows="6"></textarea>
+                <button id="checkBtn" class="btn-primary">Check Spelling</button>
+                <button id="clearBtn" class="btn-secondary">Clear</button>
+            </section>
+
+            <section class="results-section">
+                <h2>Results</h2>
+                <div id="resultsContainer" class="hidden">
+                    <div id="statusMessage" class="status"></div>
+                    <div id="suggestionsContainer" class="suggestions-wrapper"></div>
+                </div>
+                <div id="emptyState" class="empty-state">
+                    Enter text and click "Check Spelling" to get started
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>How It Works</h2>
+                <ul>
+                    <li><strong>Edit Distance:</strong> Measures similarity between words using insertions, deletions, and substitutions</li>
+                    <li><strong>Dictionary:</strong> 7,000+ word reference database</li>
+                    <li><strong>Suggestions:</strong> Words with distance ≤ 2 are shown as corrections</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>CS 340 Educational Project | Levenshtein Distance Spell Checker</p>
+        </footer>
+    </div>
+
+    <script src="spell_checker.js"></script>
+</body>
+</html>
