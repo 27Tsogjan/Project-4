@@ -98,6 +98,10 @@ const statusMessage = document.getElementById('statusMessage');
 const suggestionsContainer = document.getElementById('suggestionsContainer');
 const emptyState = document.getElementById('emptyState');
 
+// Disable button until dictionary loads
+checkBtn.disabled = true;
+checkBtn.textContent = 'Loading...';
+
 checkBtn.addEventListener('click', SpellCheck);
 clearBtn.addEventListener('click', clearAll);
 inputWord.addEventListener('keypress', (e) => {
@@ -161,7 +165,9 @@ function clearAll() {
     inputWord.focus();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    spellChecker.loadDictionary();
+document.addEventListener('DOMContentLoaded', async () => {
+    await spellChecker.loadDictionary();
     inputWord.focus();
+    checkBtn.disabled = false;
+    checkBtn.textContent = 'Check';
 });
