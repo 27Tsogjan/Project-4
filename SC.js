@@ -100,7 +100,7 @@ const emptyState = document.getElementById('emptyState');
 
 // Disable button until dictionary loads
 checkBtn.disabled = true;
-checkBtn.textContent = 'Loading...';
+checkBtn.textContent = 'Checking...';
 
 checkBtn.addEventListener('click', SpellCheck);
 clearBtn.addEventListener('click', clearAll);
@@ -117,9 +117,6 @@ function SpellCheck() {
         emptyState.classList.add('hidden');
         return;
     }
-    
-    checkBtn.disabled = true;
-    checkBtn.textContent = 'Checking...';
     
     displayResults(spellChecker.checkText(word), word);
     checkBtn.disabled = false;
